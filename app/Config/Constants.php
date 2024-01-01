@@ -78,9 +78,9 @@ defined('EXIT_DATABASE')       || define('EXIT_DATABASE', 8);       // database 
 defined('EXIT__AUTO_MIN')      || define('EXIT__AUTO_MIN', 9);      // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      || define('EXIT__AUTO_MAX', 125);    // highest automatically-assigned error code
 
-defined('EMAIL') || define('EMAIL', 'hearlyramadhan@gmail.com');
-defined('EMAIL_NAME') || define('EMAIL_NAME', "Hearly Ramadhan");
-defined('EMAIL_PW') || define('EMAIL_PW', 'odie yevg owdp anyz');
+defined('EMAIL') || define('EMAIL', 'xxx');
+defined('EMAIL_NAME') || define('EMAIL_NAME', "xxx");
+defined('EMAIL_PW') || define('EMAIL_PW', 'xxxx');
 /**
  * @deprecated Use \CodeIgniter\Events\Events::PRIORITY_LOW instead.
  */
