@@ -6,8 +6,8 @@
 function sendEmail($attach, $to, $title, $msg)
 {
     $email = \Config\Services::email();
-    // $sendemail = "hearlyramadhan@gmail.com";
-    // $sendname = "Hearly Ramadhan";
+    // $sendemail = "xxx";
+    // $sendname = "xxx";
 
     $config['protocol'] = 'smtp';
     $config['SMTPHost'] = 'smtp.gmail.com';
