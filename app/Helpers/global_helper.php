@@ -89,3 +89,60 @@ function purHtml($dirty_html)
     $clean_html = $purifier->purify($dirty_html);
     return $clean_html;
 }
+
+function getConf($confName)
+{
+    $confm = new \App\Models\ConfigModel;
+    // $confName = $confGet['conf_name'];
+
+    $filter = ['conf_name' => $confName];
+    $data = $confm->getConf($filter);
+    // $data = $filter['conf_value'];
+    return $data;
+}
+
+function setConf($confName, $nData)
+{
+    $confm = new \App\Models\ConfigModel;
+    // $confGet = $confm->getConf($confName);
+
+    $dataG = getConf($confName);
+    $updConf = [
+        'conf_name' => $confName,
+        'conf_value' => $nData['conf_value']
+    ];
+    if ($dataG != null) {
+        $updConf = [
+            'id' => $dataG['id'],
+            'conf_name' => $confName,
+            'conf_value' => $nData['conf_value']
+        ];
+    }
+    // else {
+    // }
+
+    $confm->updConf($updConf);
+    // $act = $confm->save($data);
+    // if ($act == false) {
+    //     return false;
+    // }
+    // return $act;
+}
+
+function writerPost($username)
+{
+    $admM = new \App\Models\AdminModel;
+
+    $data = $admM->getData($username);
+    return $data['username'];
+}
+
+function linkPostSet($postId)
+{
+    $postM = new \App\Models\PostModel;
+    $data = $postM->getData($postId);
+    $type = $data['type'];
+    $tSeo = $data['title_seo'];
+    $ret = site_url($type . '/' . $tSeo);
+    return $ret;
+}

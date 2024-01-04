@@ -24,7 +24,7 @@ class Admin extends BaseController
         // exit;
         // echo 'konttttt';
         $data = [
-            'title' => 'LOGIN PAGE'
+            'titlepg' => 'LOGIN PAGE'
         ];
         if (get_cookie('cookuser') && get_cookie('cookpw')) {
             $cookuser = get_cookie('cookuser');
@@ -77,8 +77,8 @@ class Admin extends BaseController
                     return redirect()->to('admin/article')->withCookies();
                 }
             }
-            session()->setFlashdata('msg', 'USERNAME/PASSWORD IS WRONG, FUCK U!!!');
-            session()->setFlashdata('out', 'GO IT BITCH!!!');
+            session()->setFlashdata('msg', 'USERNAME/PASSWORD IS WRONG !!!');
+            // session()->setFlashdata('out', 'GO IT BITCH!!!');
             return redirect()->to('/admin');
         }
         echo 'cook ' . get_cookie('cookuser');
@@ -90,7 +90,7 @@ class Admin extends BaseController
     public function mains()
     {
         $data = [
-            'title' => 'MAIN PAGE',
+            'titlepg' => 'MAIN PAGE',
         ];
         // d(get_cookie('cooskuser'));
         echo 'cook ' . get_cookie('cookuser');
@@ -99,14 +99,14 @@ class Admin extends BaseController
     public function logout()
     {
         // $data = [
-        //     'title' => 'LOGIN PAGE'
+        //     'titlepg' => 'LOGIN PAGE'
         // ];
 
         delete_cookie('cookuser');
         delete_cookie('cookpw');
         session()->destroy();
 
-        return redirect()->to('/admin')->withCookies();
+        return redirect()->to('/admin')->withCookies()->with('out', 'SUCCESS FOR LOGOUT');
         // return redirect()->to('/admin');
     }
     function forgotpw()
@@ -151,7 +151,7 @@ class Admin extends BaseController
     }
     function resetpw()
     {
-        $data = ['title' => 'RESET PW'];
+        $data = ['titlepg' => 'RESET PW'];
         $email = $this->request->getGet('email');
         $token = $this->request->getGet('token');
         $err = [];

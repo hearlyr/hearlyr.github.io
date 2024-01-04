@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title><?= $title; ?></title>
+    <title><?= ($titlepg) ? $titlepg : ''; ?></title>
     <link href="<?= base_url(); ?>vendor/css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
@@ -29,7 +29,7 @@
                                 <div class="card-body">
                                     <?= session()->get('email'); ?>
                                     <?php if (session()->getFlashdata('msg')) { ?>
-                                        <div class="alert alert-warning">
+                                        <div class="alert alert-success">
                                             <?= session()->getFlashdata('msg'); ?>
                                         </div>
                                     <?php } ?>

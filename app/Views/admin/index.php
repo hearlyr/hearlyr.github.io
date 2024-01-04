@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title><?= $title; ?></title>
+    <title><?= (isset($titlepg)) ? $titlepg : 'UND'; ?></title>
     <link href="<?= base_url(); ?>vendor/css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
@@ -47,8 +47,8 @@
                                             <label for="inputPassword">Password</label>
                                         </div>
                                         <div class="form-check mb-3">
-                                            <input class="form-check-input" name="remember" id="remember" type="checkbox" value="1" />
                                             <label class="form-check-label" for="remember">Remember Me?</label>
+                                            <input class="form-check-input" name="remember" id="remember" type="checkbox" value="1" />
                                         </div>
                                         <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                             <button class="btn btn-primary" type="submit" name="submit">Login</button>

@@ -80,7 +80,20 @@
                             <label for="post" class="form-label">Content</label>
                             <textarea class="form-control" name="post" id="post" rows="3"><?= (isset($post)) ? $post : $ses->getFlashdata('post'); ?></textarea>
                         </div>
-                        <button type="submit" name="add" class="btn btn-primary">Add</button>
+                        <div class="row mb-3 ">
+                            <div class="col-lg-3">
+                                <label for="frontpg" class="form-label">Page</label>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" name="frontpg" id="frontpg" type="checkbox" value="1" <?= (isset($frontpg)) ? 'checked' : ''; ?> />
+                                    <label class="form-check-label" for="frontpg">Front Page</label>
+                                    <div class="col-lg-3">
+                                        <input class="form-check-input" name="contactpg" id="contactpg" type="checkbox" value="1" <?= (isset($contactpg)) ? 'checked' : ''; ?> />
+                                        <label class="form-check-label" for="contactpg">Contact Page</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" name="add" class="btn btn-primary btn-add">Add</button>
                     </form>
                 </div>
             </div>

@@ -2,16 +2,16 @@
 <?php $this->section('content'); ?>
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">ARTICLE</h1>
+        <h1 class="mt-4">PAGE</h1>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">Article</li>
+            <li class="breadcrumb-item active">Page</li>
         </ol>
         <div class="row">
 
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
-                    Articles
+                    Pages
                 </div>
                 <div class="card-body">
                     <?php if (session()->getFlashdata('scs')) : ?>
@@ -22,7 +22,7 @@
                     <?php endif; ?>
                     <div class="row-6 mb-3 ">
                         <div class="col-lg-3 mb-3">
-                            <a href="<?= site_url('/article/addart'); ?>" class="btn btn-success btn-lg">+ ADD ARTICLE</a>
+                            <a href="<?= site_url('/page/addpg'); ?>" class="btn btn-success btn-lg">+ ADD PAGE</a>
                         </div>
                         <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0" method="get" action="">
                             <div class="input-group">
@@ -54,12 +54,12 @@
                                     <td class="col"><?= $d['title']; ?></td>
                                     <td class="col"><?= $d['post']; ?></td>
                                     <td class="col"><?= idForDate($d['created']); ?></td>
-                                    <td class="col text-center">
-                                        <img src="/img/<?= $d['thumbnail']; ?>" alt="not an iamge" style="width: 40px; border-radius: 50%;">
+                                    <td class="col text-center py-10">
+                                        <img src="/img/<?= $d['thumbnail']; ?>" alt="not an iamge" style="width: 40px; border-radius: 5%;">
                                     </td>
                                     <td class="col text-center">
-                                        <a href="<?= site_url("/article/editart/?post_id=$pId"); ?>" class="btn btn-sm btn-warning">EDIT</a>
-                                        <a href="<?= site_url("/article/?act=del&post_id=$pId"); ?>" onclick="return confirm('Delete This Article')" class="btn btn-sm btn-danger">DELETE</a>
+                                        <a href="<?= site_url("/page/editpg/?post_id=$pId"); ?>" class="btn btn-sm btn-warning">EDIT</a>
+                                        <a href="<?= site_url("/page/?act=del&post_id=$pId"); ?>" onclick="return confirm('Delete This Page')" class="btn btn-sm btn-danger">DELETE</a>
                                     </td>
                                 </tr>
                             <?php } ?>

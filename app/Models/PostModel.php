@@ -41,7 +41,7 @@ class PostModel extends Model
         }
         return $url;
     }
-    function savePost($data, $type = 'article')
+    function savePost($data, $type)
     {
         helper('global_helper');
         $tbl = $this->table($this->table);
@@ -51,6 +51,7 @@ class PostModel extends Model
             $data[$key] = purHtml($value);
         }
         // $tseo = $data['title_seo'];
+        $act = '';
         if (isset($data['post_id'])) {
             // $data=['title_seo'=>$tseo];
             $act = $tbl->save($data);
@@ -89,5 +90,13 @@ class PostModel extends Model
         $data['record'] = $tbl->paginate($perpage, $gdataset);
         $data['pager'] = $tbl->pager;
         return $data;
+    }
+
+    function getPostSeo($tSeo)
+    {
+        $tbl = $this->table($this->table);
+        $tbl->where('title_seo', $tSeo);
+        $query = $tbl->get()->getRowArray();
+        return $query;
     }
 }

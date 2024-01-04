@@ -2,16 +2,16 @@
 <?php $this->section('content'); ?>
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">ARTICLE</h1>
+        <h1 class="mt-4">SOSMED</h1>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">Article</li>
+            <li class="breadcrumb-item active">Sosmed</li>
         </ol>
         <div class="row">
 
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
-                    Articles
+                    Sosmed
                 </div>
                 <div class="card-body">
                     <?php if (session()->getFlashdata('scs')) : ?>
@@ -22,24 +22,16 @@
                     <?php endif; ?>
                     <div class="row-6 mb-3 ">
                         <div class="col-lg-3 mb-3">
-                            <a href="<?= site_url('/article/addart'); ?>" class="btn btn-success btn-lg">+ ADD ARTICLE</a>
+                            <a href="<?= site_url('/sosmed/addsm'); ?>" class="btn btn-success btn-lg">+ ADD sosmed</a>
                         </div>
-                        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0" method="get" action="">
-                            <div class="input-group">
-                                <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
-                                <input class="form-control" type="text" name="keyword" value="<?= $keyword; ?>" placeholder="Search..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                            </div>
-                        </form>
                     </div>
                     <table class="table table-bordered">
                         <thead class="text-center">
                             <tr class="row" style="color: cadetblue; font-size: 20px;">
                                 <th class="col-1">No.</th>
                                 <!-- <th class="col">Username</th> -->
-                                <th class="col">Title</th>
-                                <th class="col">Content</th>
-                                <th class="col">Created</th>
-                                <th class="col">Thumbnail</th>
+                                <th class="col">Sosmed</th>
+                                <th class="col">Link</th>
                                 <th class="col">Action</th>
                             </tr>
                         </thead>
@@ -51,15 +43,11 @@
                                     <td class="col-1 text-center"><?= $number++; ?></td>
                                     <!-- <td class="col"><? //= $d['username']; 
                                                             ?></td> -->
-                                    <td class="col"><?= $d['title']; ?></td>
-                                    <td class="col"><?= $d['post']; ?></td>
-                                    <td class="col"><?= idForDate($d['created']); ?></td>
+                                    <td class="col"><?= $d['sosmed']; ?></td>
+                                    <td class="col"><?= $d['link']; ?></td>
                                     <td class="col text-center">
-                                        <img src="/img/<?= $d['thumbnail']; ?>" alt="not an iamge" style="width: 40px; border-radius: 50%;">
-                                    </td>
-                                    <td class="col text-center">
-                                        <a href="<?= site_url("/article/editart/?post_id=$pId"); ?>" class="btn btn-sm btn-warning">EDIT</a>
-                                        <a href="<?= site_url("/article/?act=del&post_id=$pId"); ?>" onclick="return confirm('Delete This Article')" class="btn btn-sm btn-danger">DELETE</a>
+                                        <a href="<?= site_url("/sosmed/editsm/?post_id=$pId"); ?>" class="btn btn-sm btn-warning">EDIT</a>
+                                        <a href="<?= site_url("/sosmed/?act=del&post_id=$pId"); ?>" onclick="return confirm('Delete This sosmed')" class="btn btn-sm btn-danger">DELETE</a>
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -67,7 +55,7 @@
                     </table>
                     <div class="text-align">
 
-                        <?= $pager->links('pg', 'pagination'); ?>
+                        <?= $pager->links('sm', 'pagination'); ?>
                     </div>
                 </div>
             </div>
