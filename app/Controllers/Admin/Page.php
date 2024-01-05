@@ -117,6 +117,7 @@ class Page extends BaseController
                     setConf($conf_name, $dataSet);
 
                     /*set Contact page */
+                    $contactId = '';
                     $conf_name = "contactpg";
                     if ($contactpg == '1') {
                         $contactId = $pageId;

@@ -37,7 +37,7 @@
                                 <th class="col-1">No.</th>
                                 <!-- <th class="col">Username</th> -->
                                 <th class="col">Title</th>
-                                <th class="col">Content</th>
+                                <!-- <th class="col">Content</th> -->
                                 <th class="col">Created</th>
                                 <th class="col">Thumbnail</th>
                                 <th class="col">Action</th>
@@ -52,7 +52,8 @@
                                     <!-- <td class="col"><? //= $d['username']; 
                                                             ?></td> -->
                                     <td class="col"><?= $d['title']; ?></td>
-                                    <td class="col"><?= $d['post']; ?></td>
+                                    <!-- <td class="col"><? //= $d['post']; 
+                                                            ?></td> -->
                                     <td class="col"><?= idForDate($d['created']); ?></td>
                                     <td class="col text-center">
                                         <img src="/img/<?= $d['thumbnail']; ?>" alt="not an iamge" style="width: 40px; border-radius: 50%;">
